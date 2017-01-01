@@ -1,0 +1,43 @@
+{
+  "name": "bloodlife",
+  "title": "Bloodlife",
+  "version": "0.0.1",
+  "homepage": "https://github.com/xtrycatchx/bloodlife",
+  "author": "Paul Sydney Orozco",
+  "description": "A nodejs app/platform that bridges the gap between patients and blood banks",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+     "node": "5.9.1"
+  },
+  "dependencies": {
+    "path":"0.12.7",
+    "express":"4.14.0"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.13.0",
+    "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-header": "^1.8.7",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.4",
+    "jquery": "^1.11.3",
+    "magnific-popup": "^1.1.0",
+    "scrollreveal": "^3.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xtrycatchx/bloodlife.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
