@@ -37,7 +37,10 @@ var shutdown = function() {
     server.close();
 }
 
-exports.start = start;
-exports.shutdown = shutdown;
-exports.port = app.get('port');
-
+if (require.main === module) {
+    start();
+} else {
+    exports.start = start;
+    exports.shutdown = shutdown;
+    exports.port = app.get('port');
+}
