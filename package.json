@@ -7,28 +7,33 @@
   "description": "A nodejs app/platform that bridges the gap between patients and blood banks",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "./node_modules/mocha/bin/mocha test -R nyan"
   },
   "engines": {
      "node": "5.9.1"
   },
   "dependencies": {
     "path":"0.12.7",
-    "express":"4.14.0"
+    "express":"4.14.0",
+    "helmet":"3.3.0"
   },
   "devDependencies": {
     "bootstrap": "^3.3.7",
-    "browser-sync": "^2.13.0",
-    "font-awesome": "^4.6.3",
+    "browser-sync": "^2.18.5",
+    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.10",
-    "gulp-header": "^1.8.7",
-    "gulp-less": "^3.1.0",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-header": "^1.8.8",
+    "gulp-less": "^3.3.0",
     "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.4",
-    "jquery": "^1.11.3",
+    "gulp-uglify": "^2.0.0",
+    "jquery": "^3.1.1",
     "magnific-popup": "^1.1.0",
-    "scrollreveal": "^3.1.4"
+    "scrollreveal": "^3.1.4",
+    "mocha": "3.2.0",
+    "superagent": "3.3.1",
+    "expect.js": "0.3.1"
   },
   "repository": {
     "type": "git",
