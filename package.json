@@ -16,7 +16,8 @@
   "dependencies": {
     "path":"0.12.7",
     "express":"4.14.0",
-    "helmet":"3.3.0"
+    "helmet":"3.3.0",
+    "body-parser":"1.15.2"
   },
   "devDependencies": {
     "bootstrap": "^3.3.7",
