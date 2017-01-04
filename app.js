@@ -8,6 +8,7 @@ var path = require('path');
 var express = require('express');
 var helmet = require('helmet');
 var bodyParser = require('body-parser');
+var validator = require( "./validator.js" );
 var server;
 
 var app = express();
@@ -29,12 +30,65 @@ app.get('/', function(req, res) {
 
 app.post('/inquire', function(req, res) {
     //TODO: add processing for submitted blood inquiry
+
+    var data = {};
+
     var fullName = req.body.fullName;
 	var emailAdd = req.body.emailAddress;
-	var contactN = req.body.contactNumber;
+    var contactN = req.body.contactNumber;
     var bloodTpe = req.body.bloodType;
-    console.log('broadcast this info to trusted blood providers: ', fullName, emailAdd, contactN, bloodTpe);
-    res.send(fullName + ' ' + emailAdd + ' ' + contactN + ' ' + bloodTpe);
+
+    //Validate Full Name
+    if(validator.isNullOrWhiteSpace(fullName)) {
+       console.log('Invalid fullName');
+        data = {
+            result: 'NOK',
+            errors : {
+                fullName: 'Please provide your Full Name to allow Bloodbanks and Hospitals to contact you.'
+            }
+        }; 
+    } else
+        // Validate Email 
+        if(!validator.validateEmail(emailAdd)) {
+            console.log('Invalid email');
+            data = {
+                result: 'NOK',
+                errors : {
+                    emailAddress: 'Please provide correct email.'
+                }
+            };
+    } else
+        // Validate Contact Number
+        if(validator.isNullOrWhiteSpace(contactN)) {
+            console.log('Invalid Contact Number');
+            data = {
+                result: 'NOK',
+                errors : {
+                    contactNumber: 'Please provide your Contact Number(s) to allow Bloodbanks and Hospitals to contact you.'
+                }
+            }; 
+    } else 
+        // Validate bloodType
+        if(validator.isNullOrWhiteSpace(bloodTpe)) {
+            console.log('Invalid Blood Type');
+            data = {
+                result: 'NOK',
+                errors : {
+                    bloodType: 'Please provide the type of blood you are requesting.'
+                }
+            };
+    } else {
+
+        // Everything seems OKAY
+        console.log('Post data is OK');
+        console.log('broadcast this info to trusted blood providers: ', fullName, emailAdd, contactN, bloodTpe);
+        data = {
+            result: 'OK',
+            message: 'Successfully broadcasted your request. Kindly wait for the trusted blood providers to reach you.'
+        };
+    }
+
+    res.send(data);
 });
 
 var start = function () {
