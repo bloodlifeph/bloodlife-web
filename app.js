@@ -9,6 +9,7 @@ var express = require('express');
 var helmet = require('helmet');
 var bodyParser = require('body-parser');
 var validator = require( "./validator.js" );
+var facade = require( "./facade.js" );
 var server;
 
 var app = express();
@@ -26,6 +27,11 @@ app.use(bodyParser.urlencoded({	extended: true })); // support encoded bodies
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'));
+});
+
+app.get('/providers', function(req, res) {
+    var data = facade.retrieveProviders();
+    res.send(data);
 });
 
 app.post('/inquire', function(req, res) {
@@ -81,11 +87,13 @@ app.post('/inquire', function(req, res) {
 
         // Everything seems OKAY
         console.log('Post data is OK');
-        console.log('broadcast this info to trusted blood providers: ', fullName, emailAdd, contactN, bloodTpe);
+        // console.log('broadcast this info to trusted blood providers: ', fullName, emailAdd, contactN, bloodTpe);
         data = {
             result: 'OK',
             message: 'Successfully broadcasted your request. Kindly wait for the trusted blood providers to reach you.'
         };
+
+        facade.processInquiry(req.body);
     }
 
     res.send(data);
