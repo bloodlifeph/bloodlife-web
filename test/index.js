@@ -22,6 +22,18 @@ describe('server', function () {
         })
     });
 
+    describe('retrieve providers', function(){
+        it('should display list of providers',function(done){
+            superagent
+            .get('http://localhost:'+port+ '/providers')
+            .end(function(err, res){
+                expect(res.text).contain('providers');
+                expect(res.status).to.equal(200);
+                done()
+            })
+        })
+    });
+
     // No data provided
     describe('inquire no-params', function(){
         it('should return an error',function(done){
