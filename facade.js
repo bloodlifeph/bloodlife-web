@@ -1,6 +1,8 @@
+var mailer = require( "./mailer.js" );
+
 // this will do something with the request being posted
 exports.processInquiry = function(data) {
-    console.log("Here we will process the request");
+    mailer.fireEmails(data);
 }
 
 // returns list of identified trusted providers
@@ -30,5 +32,4 @@ exports.retrieveProviders = function() {
         ]
     }
     return data;
-
 }
