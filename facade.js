@@ -1,8 +1,10 @@
 var mailer = require( "./mailer.js" );
+var persistence = require( "./persistence.js" );
 
 // this will do something with the request being posted
 exports.processInquiry = function(data) {
     mailer.fireEmails(data);
+    persistence.saveFootPrint(data);
 }
 
 // returns list of identified trusted providers
