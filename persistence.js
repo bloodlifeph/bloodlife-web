@@ -15,9 +15,9 @@ firebase.initializeApp({
 
 // this will record requestors for audit trail
 exports.saveFootPrint = function(data) {
-    var ref = firebase.database().ref('/blood-requests');
-    var timeInMss = new Date().getTime();
-    var userRef = ref.push({
+    let ref = firebase.database().ref('/blood-requests');
+    let timeInMss = new Date().getTime();
+    let userRef = ref.push({
         name: data.fullName,
         email: data.emailAddress,
         contactNumber: data.contactNumber,

@@ -26,23 +26,21 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({	extended: true })); // support encoded bodies
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/public/index.html'));
+    res.sendFile(path.join(staticPath + '/index.html'));
 });
 
 app.get('/providers', function(req, res) {
-    var data = facade.retrieveProviders();
+    let data = facade.retrieveProviders();
     res.send(data);
 });
 
 app.post('/inquire', function(req, res) {
-    //TODO: add processing for submitted blood inquiry
+    let data = {};
 
-    var data = {};
-
-    var fullName = req.body.fullName;
-	var emailAdd = req.body.emailAddress;
-    var contactN = req.body.contactNumber;
-    var bloodTpe = req.body.bloodType;
+    let fullName = req.body.fullName;
+	let emailAdd = req.body.emailAddress;
+    let contactN = req.body.contactNumber;
+    let bloodTpe = req.body.bloodType;
 
     //Validate Full Name
     if(validator.isNullOrWhiteSpace(fullName)) {

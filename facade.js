@@ -9,7 +9,7 @@ exports.processInquiry = function(data) {
 
 // returns list of identified trusted providers
 exports.retrieveProviders = function() {
-    var data = {
+    let data = {
         providers : [ 
             {
                 name : 'Hospital A',
