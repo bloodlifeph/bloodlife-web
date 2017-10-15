@@ -12,3 +12,5 @@ HOW TO RUN this bloodlife-web:
 6. Open the web app from your browser -- localhost:3000
 
 That's it! Let's go!!! :) 
+
+SAVE LIVES WITH BLOODLIFE.
