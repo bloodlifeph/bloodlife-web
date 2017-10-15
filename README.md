@@ -1,7 +1,7 @@
 # bloodlife-web
 Web version for the bloodlife.ph app/platform
 
-HOW TO RUN this bloodlife-web:
+*HOW TO RUN this bloodlife-web app*
 
 0. Ensure you have installed node and npm.
 1. Fork/Clone the bloodlife-web repository.
