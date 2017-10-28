@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Seeking blood is strenuous and very expensive. We aim to provide a platform where Cebuano's can inquire for blood availability directly from bloodbanks and hospitals.">
-    <meta name="keywords" content="Cebu,blood,bloodlife">
+    <meta name="description" content="Seeking blood is strenuous and very expensive. We aim to provide a platform where Filipinos can directly broadcast their blood inquiries to matching donors. In our small little ways, we aim to bridge the gap between patients/people needing blood and blood donors.">
+    <meta name="keywords" content="Cebu,Philippines,blood,bloodlife,donor,inquire,life">
     <meta name="author" content="bloodlife.ph">
 
-    <title>Bloodlife - Lets fix the blood shortage problem</title>
+    <title>Bloodlife.PH - Lets fix the blood shortage problem</title>
 
     <meta property="og:title" content="Bloodlife PH" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://bloodlifeph.herokuapp.com/" />
-    <meta property="og:image" content="http://bloodlifeph.herokuapp.com/img/graph_share_bloodlife.jpg" />
-    <meta property="og:image:secure_url" content="https://bloodlifeph.herokuapp.com/img/graph_share_bloodlife.jpg" />
+    <meta property="fb:app_id" content="418952115149276" />
+    <meta property="og:url" content="http://bloodlife.ph" />
+    <meta property="og:image" content="http://bloodlife.ph/img/graph_share_bloodlife.jpg" />
+    <meta property="og:image:secure_url" content="http://bloodlife.ph/img/graph_share_bloodlife.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:description" content="Seeking blood is strenuous and very expensive. We aim to provide a platform where Cebuano's can inquire for blood availability directly from bloodbanks and hospitals."/>
+    <meta property="og:description" content="Seeking blood is strenuous and very expensive. We aim to provide a platform where Filipinos can directly broadcast their blood inquiries to matching donors. In our small little ways, we aim to bridge the gap between patients/people needing blood and blood donors."/>
 
-    <!-- Bootstrap Core CSS -->
+    <link rel="icon" href="http://bloodlife.ph/img/faveico.png">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
-    <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-    <!-- Theme CSS -->
-    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
+    <link href="css/skin.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,11 +36,29 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    
-
 </head>
 
 <body id="page-top">
+    <script>
+      
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '95100348886',
+          xfbml      : true,
+          version    : 'v2.6'
+        });
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      
+      
+    </script>
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -57,24 +70,12 @@
                 <a class="navbar-brand page-scroll" href="#page-top">BloodLife.ph</a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#inquire">Inquire Blood</a>
-                    </li>
-                    <!--<li>
-                        <a class="page-scroll" href="#providers">Blood Providers</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li>-->
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
+                    <li><a class="page-scroll" href="#about">About</a></li>
+                    <li><a class="page-scroll" href="#donor">Be a Donor</a></li>
+                    <li><a class="page-scroll" href="#inquire">Inquire Blood</a></li>
+                    <li><a class="page-scroll" href="#contact">Contact</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -85,10 +86,15 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Let us bridge the gap between patients and blood banks</h1>
-                <hr>
-                <p>Seeking blood is strenuous and very expensive. We aim to provide a platform where Cebuanos can inquire for blood availability directly from bloodbanks and hospitals.</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <h1 id="homeHeading" class="text-faded">Let us bridge the gap between patients and blood donors</h1>
+                <p>Seeking blood is strenuous and very expensive. We aim to provide a platform where Filipinos can directly broadcast their blood inquiries to matching donors.</p>
+                
+                <a href="#about" class="fancy-button bg-gradient1 page-scroll"><span><i class="fa"></i>Find Out More</span></a>
+                <!--<a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>-->
+
+                <a href="https://www.messenger.com/t/bloodlife.ph" class="fancy-button bg-gradient2"><span>Get Started</span></a>
+
+                <!--<a href="#about" class="btn btn-primary btn-xl"><img src="img/fb_messenger_btn.png"/> Started</a>-->
             </div>
         </div>
     </header>
@@ -98,48 +104,40 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">About</h2>
-                    <hr class="light">
-                    <p class="text-faded">The internet is a free source of information and we want to take advantage of this free technology. Bloodlife provides an online platform that connects people who are in need of blood with banks and hospitals. For now we don't cater blood donors, but maybe we will in the future. We believe this will really help everyone. We believe we would be able to help Cebuanos in our little ways.</p>
-                    <a href="#inquire" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+                    <p>The internet is a free source of information and we want to take advantage of this free technology. Bloodlife provides an online platform that connects people who are in need of blood with donors. We believe this will really help everyone. We believe we would be able to help our fellow Filipinos in our little ways.</p>
+                    <a href="#inquire" class="page-scroll btn btn-default btn-l sr-button">Inquire Blood</a> <a href="#donor" class="page-scroll btn btn-default btn-l sr-button">Be A Donor</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-dark" id="inquire">
+    <section class="bg-dark" id="donor">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Be A Donor</h2>
+                    <p class="text-faded">Message us to be a voluntary blood donor.</p>
+                    <p class="text-faded">By registering you will automatically be added to the active list of blood donors, who will then receive Facebook notifications when there is a match for your blood type.</p>
+                    <p class="text-faded">Message us with this format <font color="#3B5998">'REGISTER <i>&lt Your Blood Type &gt</i>'</font>, for example : <font color="#F05F40"><i>REGISTER O+</i></p></font>
+                    <div class="fb-messengermessageus" messenger_app_id="418952115149276" page_id="365425240494680" color="blue" size="xlarge">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary" id="inquire">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Inquire</h2>
-                    <hr class="light">
                     <p class="text-faded">
-                        Please choose the blood type that you are looking for and provide your contact details. Our trusted blood providers will message you if they have the blood type that you're looking for.
+                        Please choose the blood type that you are looking for and provide your contact details. Your inquiry will be broadcasted to the kind hearted blood donors and they will reach you from the contact details that you provide below.
                     </p>
-                    
+
                     <form method="POST" id="inquireForm" class="form-horizontal">
                         <fieldset>
-                            <!-- Full Name -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">Your Full Name</label>
-                                <div id="fullName-group" class="col-md-4">
-                                    <input id="fullName" name="fullName" type="text" placeholder="Juan dela Cruz" class="form-control input-md">
-                                </div>
-                            </div>
-                            <!-- Email Address -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">Your Email Address</label>
-                                <div id="emailAddress-group" class="col-md-4">
-                                    <input id="emailAddress" name="emailAddress" type="text" placeholder="juandelacruz@gmail.com" class="form-control input-md">
-                                </div>
-                            </div>
-                            <!-- Mobile Number -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">Your Mobile Number</label>
-                                <div id="contactNumber-group" class="col-md-4">
-                                    <input id="contactNumber" name="contactNumber" type="text" placeholder="09XXXXXXXXX" class="form-control input-md">
-                                </div>
-                            </div>
-                            
+
                             <!-- Blood Types -->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="selectbasic">Blood Type Needed</label>
@@ -153,14 +151,74 @@
                                         <option value="B-">B-</option>
                                         <option value="AB+">AB+</option>
                                         <option value="AB-">AB-</option>
+                                        <option value="ANY">Any Type</option>
                                     </select>
                                 </div>
                             </div>
-                            
+
+                            <!-- Nearest City -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="selectbasic">Nearest City</label>
+                                <div class="col-md-4">
+                                    <select id="nearestCity" name="nearestCity" class="form-control">
+                                        
+                                        <option value="Antipolo">Antipolo</option>
+                                        <option value="Agoo City">Agoo City</option>
+                                        <option value="Baguio">Baguio</option>
+                                        <option value="Cagayan de Oro">Cagayan de Oro</option>
+                                        <option value="Caloocan">Caloocan</option>
+                                        <option value="Cebu City">Cebu City</option>
+                                        <option value="Dagupan City">Dagupan City</option>
+                                        <option value="Davao City">Davao City</option>
+                                        <option value="Manila">Manila</option>
+                                        <option value="Pasig">Pasig</option>
+                                        <option value="Quezon City">Quezon City</option>
+                                        <option value="San Fernando City">San Fernando City</option>
+                                        <option value="Taguig">Taguig</option>
+                                        <option value="Tagbiliran">Tagbilaran City</option>
+                                        <option value="Zamboanga City">Zamboanga City</option>
+                                        
+                                        
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Full Name -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Your Full Name</label>
+                                <div id="fullName-group" class="col-md-4">
+                                    <input id="fullName" name="fullName" type="text" placeholder="Juan dela Cruz" class="form-control input-md">
+                                </div>
+                            </div>
+
+                            <!-- Email Address 
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Your Email Address</label>
+                                <div id="emailAddress-group" class="col-md-4">
+                                    <input id="emailAddress" name="emailAddress" type="text" placeholder="juandelacruz@gmail.com" class="form-control input-md">
+                                </div>
+                            </div> -->
+                            <!-- Mobile Number -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Your Mobile Number</label>
+                                <div id="contactNumber-group" class="col-md-4">
+                                    <input id="contactNumber" name="contactNumber" type="text" placeholder="09XXXXXXXXX" class="form-control input-md">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput"><div id="challenge"></div></label>
+                                <div id="captcha-group" class="col-md-4">
+                                    </br>
+                                     <input id="captcha" name="captcha" type="text" placeholder="Verify the captcha text here" class="form-control input-md">
+                                </div>
+                            </div>
+
+
                             <!-- Button -->
                             <div class="form-group">
                                 <div class="col-lg-12">
-                                    <button type="submit" id="submitBtn" name="submitBtn" class="btn btn-primary">Send Blood Inquiry</button>
+                                    <button type="submit" id="submitBtn" name="submitBtn" class="btn btn-default btn-xl sr-button">Send Blood Inquiry</button>
                                 </div>
                             </div>
                         </fieldset>
@@ -170,54 +228,36 @@
         </div>
     </section>
 
-    <!-- disable this for now until we get some hospitals/bloodbanks kind enough to support our cause
-        <section id="providers">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Trusted Blood Providers</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div id="trusted-providers" class="row">
-            </div>
-        </div>
-    </section>-->
-
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us!</h2>
+                    <p>Would you or your company like to help us? You can make a gift now or contact us to discuss how you'd like to support BloodlifePH.</p>
                     <a class="fa fa-3x fa-facebook" style="padding:10px;" href="https://facebook.com/bloodlife.ph"></a>
-                    <a class="fa fa-3x fa-twitter" style="padding:10px;" href="https://twitter.com/bloodlife.ph"></a>
-                    <a class="fa fa-3x fa-envelope" style="padding:10px;" href="mailto:xtrycatchx@gmail.com"></a>
+                    <a class="fa fa-3x fa-twitter" style="padding:10px;" href="https://twitter.com/bloodlifeph"></a>
+                    <a class="fa fa-3x fa-envelope" style="padding:10px;" href="mailto:inquiry.bloodlife.ph@gmail.com"></a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- jQuery -->
+    
     <script src="vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
-
-    <!-- inquire -->
     <script src="js/submit.js"></script>
 
-    <!-- trusted providers -->
-    <script src="js/providers.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-99011728-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 
 </body>
 
