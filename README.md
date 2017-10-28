@@ -6,7 +6,7 @@ Bloodlife aims to bridges the gap between patients and blood donors. We hope thi
 
 This repository holds the basic html that is currently shown in bloodlife.ph website
 
-[![Bloodlife.ph](https://github.com/xtrycatchx/bloodlife-web/blob/master/public/img/header.jpg?raw=true)](https://youtu.be/HP57zUh19B8 "Bloodlife.ph - Click to Watch!")
+[![Bloodlife.ph](https://github.com/xtrycatchx/bloodlife-web/blob/master/public/img/logo.png?raw=true?raw=true)](https://youtu.be/HP57zUh19B8 "Bloodlife.ph - Click to Watch!")
 
 ## Contributing
 1. Fork it
